@@ -1,21 +1,79 @@
-[![Check Assignment](https://github.com/sta523-fa25/project-python_is_the_best_language/workflows/Check%20Assignment/badge.svg)](https://github.com/sta523-fa25/project-python_is_the_best_language/actions?query=workflow:%22Check%20Assignment%22)
+# Netflix Data Explorer (Shiny App)
 
+## Overview
+Netflix Data Explorer is an interactive Shiny dashboard for analyzing patterns in Netflix’s content catalog. The project combines the Netflix Titles dataset with TMDb metadata to explore trends in ratings, popularity, genres, languages, countries, and content types.
 
-Sta 523 - Final Project
------------
+The app enables both high-level exploration and targeted discovery, allowing users to understand how content evolves over time and identify hidden gems within the catalog.
 
-Completed final project is due by 11:59 pm on Friday, December 12th.
+## Features
 
-## Guidelines
+- Interactive Shiny dashboard with multiple analysis tabs
+- Release trends by year and content type
+- IMDb rating and popularity analysis
+- "Discover" tab for identifying hidden gems and blockbusters
+- Similar-title recommendation based on rating–popularity space
+- Content rating distribution and trends over time
+- Language and country-level insights
+- Duration and season-length distributions
+- Genre trends and composition analysis
 
-1. The primary goal of the project is to do something interesting using something related to the course. This is purposefully open ended to give you the opportunity to work on something you are interested in and to produce work that you could potentially show to a prospective employer or use as part of your graduation portfolio.
- 
-1. The primary way in which you will be evaluate will be based on the evidence of effort in your project and the quality of the write up. What this means is that a "failed" project (e.g. an analysis without a significant result) that is well documented will receive a better grade than a less ambitious "successful" project with a worse write up. 
-  
-    The expectation is that most projects should be roughly 5-15 pages - including text, code, figures, and other output. This is meant only as a very rough guide to calibrate your work (there are no penalties for the report being too short or too long).
+## Project Structure
 
-1. We have included a very bare template, `project.qmd` which only includes basic section headings. Feel free to add, adjust, remove these as needed to fit your specific project, they are included only as general guidelines for structuring your write up.
+├── app.R                 # Main Shiny application  
+├── tmdb_api.R           # TMDb API helper functions  
+├── scripts_tmdb.R       # Script to generate cached TMDb dataset  
+├── report.qmd           # Project write-up  
+├── data/  
+│   ├── netflix_titles.csv  
+│   └── netflix_tmdb.csv  
+├── images/              # Selected screenshots / figures  
+├── .gitignore  
+├── project.Rproj  
+└── README.md  
 
-1. You may include all of your code in the qmd document or in one or more R script files - make sure your write up makes it clear how the code is meant to be run and how your results can reproduced. Additional data files and other supplementary materials are also fine as long as they are neatly organized and explicitly discussed in the write up.
+## Data Sources
 
-1. We have included a basic github action to render your project - if there are issues with this (e.g. data is too large to include, package dependency issues, etc.) then you are welcome to instead include the rendered html in your repository. If you do this, please make sure to include the raw qmd file as well so that we can see the code. In this case you are also welcome to delete or disable the GitHub Action.
+- Netflix Titles Dataset  
+  https://www.kaggle.com/datasets/shivamb/netflix-shows  
+
+- TMDb (The Movie Database) API  
+  https://www.themoviedb.org/settings/api  
+
+The repository includes a pre-built TMDb dataset, so the app runs without requiring API access.
+
+## How to Run
+
+1. Install required packages:
+
+install.packages(c("shiny", "tidyverse", "lubridate", "plotly", "scales", "httr2"))
+
+2. Run the app:
+
+shiny::runApp("app.R")
+
+## TMDb API (Optional)
+
+The app runs using the cached dataset:
+
+data/netflix_tmdb.csv
+
+To rebuild the data, set a TMDB_API_KEY and run:
+
+source("scripts_tmdb.R")
+
+## Collaboration
+
+This project was completed as part of a group for STA 523 at Duke University.
+
+Collaborators:
+- Robbie Hao  
+- Zixuan Lin
+- Ruibo Song
+- Xun Shao 
+
+## My Contribution
+
+- Contributed to model and analysis design across multiple perspectives  
+- Worked on data preprocessing and feature engineering  
+- Developed and refined interactive visualizations in the Shiny dashboard  
+- Participated in evaluation and interpretation of key metrics such as ratings, popularity, and distribution patterns  
