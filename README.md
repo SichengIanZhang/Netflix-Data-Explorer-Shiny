@@ -73,7 +73,7 @@ Collaborators:
 
 ## My Contribution
 
-- Contributed to model and analysis design across multiple perspectives  
+- Contributed to analytical design and data exploration across multiple perspectives  
 - Worked on data preprocessing and feature engineering  
 - Developed and refined interactive visualizations in the Shiny dashboard  
 - Participated in evaluation and interpretation of key metrics such as ratings, popularity, and distribution patterns  
