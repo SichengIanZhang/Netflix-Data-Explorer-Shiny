@@ -17,19 +17,21 @@ The app enables both high-level exploration and targeted discovery, allowing use
 - Duration and season-length distributions
 - Genre trends and composition analysis
 
-## Project Structure
+## Repository Structure
 
-├── app.R                 # Main Shiny application  
-├── tmdb_api.R           # TMDb API helper functions  
-├── scripts_tmdb.R       # Script to generate cached TMDb dataset  
-├── report.qmd           # Project write-up  
-├── data/  
-│   ├── netflix_titles.csv  
-│   └── netflix_tmdb.csv  
-├── images/              # Selected screenshots / figures  
-├── .gitignore  
-├── project.Rproj  
-└── README.md  
+```text
+├── app.R
+├── tmdb_api.R
+├── scripts_tmdb.R
+├── report.qmd
+├── data/
+│   ├── netflix_titles.csv
+│   └── netflix_tmdb.csv
+├── images/
+├── .gitignore
+├── project.Rproj
+└── README.md
+```
 
 ## Data Sources
 
@@ -38,8 +40,6 @@ The app enables both high-level exploration and targeted discovery, allowing use
 
 - TMDb (The Movie Database) API  
   https://www.themoviedb.org/settings/api  
-
-The repository includes a pre-built TMDb dataset, so the app runs without requiring API access.
 
 ## How to Run
 
@@ -63,7 +63,7 @@ source("scripts_tmdb.R")
 
 ## Collaboration
 
-This project was completed as part of a group for STA 523 at Duke University.
+This project was completed as a group project for STA 523 at Duke University.
 
 Collaborators:
 - Robbie Hao  
